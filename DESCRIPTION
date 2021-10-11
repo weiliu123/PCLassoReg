@@ -1,13 +1,15 @@
-Package: pcgrpreg
-Title: What the Package Does (One Line, Title Case)
+Package: PCLassoReg
+Title: Protein complex-based regression models for risk protein complex identification
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+    person("Wei", "Liu", , "freelw@qq.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-5496-3641"))
+Description: The package implements protein complex-based regression models for risk protein complex identification. It deals with the overlap problem of protein complexes by introducing latent variables. It includes the PCLasso2, PCSCAD, and PCMCP models that identify risk protein complexes that distinguish different classes (eg, tumor vs. non-tumor), which is implemented in the \code {PCLasso2} function, and the PCLasso model that identifies risk protein complexes related to survival outcomes, which is implemented in the \code{PCLasso} function. 
+Depends: R (>= 3.5.0)
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
+Imports: 
+    grpreg
