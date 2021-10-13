@@ -4,7 +4,7 @@ Version: 0.0.0.9000
 Authors@R: 
     person("Wei", "Liu", , "freelw@qq.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-5496-3641"))
-Description: The package implements protein complex-based regression models for risk protein complex identification. It deals with the overlap problem of protein complexes by introducing latent variables. It includes the PCLasso2, PCSCAD, and PCMCP models that identify risk protein complexes that distinguish different classes (eg, tumor vs. non-tumor), which is implemented in the \code {PCLasso2} function, and the PCLasso model that identifies risk protein complexes related to survival outcomes, which is implemented in the \code{PCLasso} function. 
+Description: The package implements protein complex-based group regression models (PCLasso and PCLasso2) for risk protein complex identification. PCLasso is a prognostic model that identifies risk protein complexes associated with survival. PCLasso2 is a classification model that identifies risk protein complexes associated with classes.  
 Depends: R (>= 3.5.0)
 License: GPL-3
 Encoding: UTF-8
@@ -12,4 +12,5 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Imports: 
+    survival,
     grpreg

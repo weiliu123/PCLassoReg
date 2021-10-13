@@ -8,6 +8,7 @@
 #' @param penalty The penalty to be applied to the model. For group selection,
 #' one of grLasso, grMCP, or grSCAD. See \code{grpreg} in the R package
 #' \code{grpreg} for details.
+#' @param family Either "binomial" or "gaussian", depending on the response.
 #' @param standardize Logical flag for \code{x} standardization, prior to
 #' fitting the model. Default is \code{TRUE}.
 #' @param ... Arguments to be passed to \code{grpreg} in the R package
@@ -66,18 +67,23 @@
 #' Type = "GeneSymbol")
 #'
 #' # fit PCLasso2 model
-#' fit.PCLasso2 <- PCLasso2(x, y, group = PC.Human, penalty = "grLasso")
+#' fit.PCLasso2 <- PCLasso2(x, y, group = PC.Human, penalty = "grLasso",
+#' family = "binomial")
 #'
 #' # fit PCSCAD model
-#' fit.PCSCAD <- PCLasso2(x, y, group = PC.Human, penalty = "grSCAD")
+#' fit.PCSCAD <- PCLasso2(x, y, group = PC.Human, penalty = "grSCAD",
+#' family = "binomial", gamma = 10)
 #'
 #' # fit PCMCP model
-#' fit.PCMCP <- PCLasso2(x, y, group = PC.Human, penalty = "grMCP")
+#' fit.PCMCP <- PCLasso2(x, y, group = PC.Human, penalty = "grMCP",
+#' family = "binomial", gamma = 9)
 PCLasso2 <- function(x, y, group,
                     penalty = c("grLasso", "grMCP", "grSCAD"),
+                    family=c("binomial", "gaussian", "poisson"),
                     standardize = TRUE,...){
 
     penalty = match.arg(penalty)
+    family = match.arg(family)
 
     if(standardize){
         x <- scale(x, center = TRUE, scale = TRUE)
@@ -124,7 +130,7 @@ PCLasso2 <- function(x, y, group,
         groupOfFeats <- c(groupOfFeats, group.i)
     }
 
-    groupOfFeats <- factor(groupOfFeats)
+    # groupOfFeats <- factor(groupOfFeats)
 
     # extended dataset
     x.ext <- x[, commonFeat.ext]
@@ -134,10 +140,11 @@ PCLasso2 <- function(x, y, group,
     fit <- grpreg::grpreg(X=x.ext,
                    y=y,
                    group=groupOfFeats,
-                   penalty = penalty, ...)
+                   penalty = penalty,
+                   family = family,...)
 
 
-    res <- list(fit = fit, Complexes.dt = Complexes.dt)
+    res <- list(fit = fit, complexes.dt = Complexes.dt)
 
     class(res) <- c("PCLasso2")
 

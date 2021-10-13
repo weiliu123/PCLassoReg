@@ -56,8 +56,8 @@
 #' @import grpreg
 #' @export
 #' @references
-#' PCLasso: a protein complex-based group lasso-Cox model for accurate prognosis
-#' and risk protein complex discovery. To be published.
+#' PCLasso: a protein complex-based, group lasso-Cox model for accurate
+#' prognosis and risk protein complex discovery. Brief Bioinform, 2021.
 #'
 #' Park, H., Niida, A., Miyano, S. and Imoto, S. (2015) Sparse overlapping group
 #' lasso for integrative multi-omics analysis. Journal of computational biology:
