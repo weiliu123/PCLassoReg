@@ -37,7 +37,7 @@ protein complexes associated with classes.
 ``` r
 library(PCLassoReg)
 
-##### PCLasso #####
+#################### PCLasso ####################
 # load data
 data(survivalData)
 data(PCGroups)
@@ -63,13 +63,14 @@ cv.fit1 <- cv.PCLasso(x = x.train, y = y.train, group = PC.Human, nfolds = 5)
 s <- predict(object = cv.fit1, x = x.test, type="link",
              lambda=cv.fit1$cv.fit$lambda.min)
 
-# Nonzero coefficients
+# Nonzero coefficients/risk protein complexes
 sel.groups <- predict(object = cv.fit1, type="groups",
                       lambda = cv.fit1$cv.fit$lambda.min)
+# Nonzero coefficients/risk proteins
 sel.vars.unique <- predict(object = cv.fit1, type="vars.unique",
                            lambda = cv.fit1$cv.fit$lambda.min)
 
-##### PCLasso2 #####
+#################### PCLasso2 ####################
 # load data
 data(classData)
 data(PCGroups)
@@ -96,9 +97,10 @@ cv.fit1 <- cv.PCLasso2(x = x.train, y = y.train, group = PC.Human,
 s <- predict(object = cv.fit1, x = x.test, type="class",
              lambda=cv.fit1$cv.fit$lambda.min)
 
-# Nonzero coefficients
+# Nonzero coefficients/risk protein complexes
 sel.groups <- predict(object = cv.fit1, type="groups",
                       lambda = cv.fit1$cv.fit$lambda.min)
+# Nonzero coefficients/risk proteins
 sel.vars.unique <- predict(object = cv.fit1, type="vars.unique",
                            lambda = cv.fit1$cv.fit$lambda.min)
 ```
