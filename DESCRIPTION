@@ -14,3 +14,5 @@ RoxygenNote: 7.1.1
 Imports: 
     survival,
     grpreg
+URL: https://github.com/weiliu123/PCLassoReg
+BugReports: https://github.com/weiliu123/PCLassoReg/issues
