@@ -29,8 +29,8 @@
 #' @format A list containing a protein expression matrix and survival data
 #' \describe{
 #'   \item{Exp}{a protein expression matrix}
-#'   \item{survData}{Survival data. The first column is a binary variable with
-#'   1 indicating that the event has occurred and 0 indicating(right); the
-#'   second column is the time on study (follow up time)}
+#'   \item{survData}{Survival data. The first column is the time on study
+#'   (follow up time); the second column is a binary variable with
+#'   1 indicating that the event has occurred and 0 indicating right censoring.}
 #' }
 "survivalData"

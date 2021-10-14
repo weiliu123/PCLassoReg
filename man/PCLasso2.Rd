@@ -20,8 +20,8 @@ and p proteins.}
 
 \item{y}{The response vector.}
 
-\item{group}{A list of groups. The feature (gene) names in \code{group}
-should be consistent with the feature (gene) names in \code{x}.}
+\item{group}{A list of groups. The feature (protein) names in \code{group}
+should be consistent with the feature (protein) names in \code{x}.}
 
 \item{penalty}{The penalty to be applied to the model. For group selection,
 one of grLasso, grMCP, or grSCAD. See \code{grpreg} in the R package
@@ -45,29 +45,28 @@ in \code{x} being filtered out. }
 Protein complex-based group Lasso-logistic model
 }
 \details{
-The function \code{PCLasso2} implements three protein complex-based
-group regression models: PCLasso2, PCSCAD, and PCMCP. The PCLasso2 model is a
-classification model that selects important predictors at the protein complex
-level to achieve accurate classification and identify risk protein complexes.
-The PCLasso2 model has three inputs: a protein expression matrix, a vector of
-binary response variables, and a number of known protein complexes. It
-estimates the correlation between protein expression and response variable at
-the level of protein complexes. Similar to traditional Lasso-logistic model,
-PCLasso2 is based on the logistic regression model and estimates the logistic
-regression coefficients by maximizing likelihood function with regularization
-penalty. The difference is that PCLasso2 selects features at the level of
-protein complexes rather than individual proteins. Considering that proteins
-usually function by forming protein complexes, PCLasso2 regards proteins
-belonging to the same protein complex as a group and constructs a group Lasso
-penalty (l1/l2 penalty) based on the sum (i.e. l1 norm) of the l2 norms of the
+The PCLasso2 model is a classification model that selects important
+predictors at the protein complex level to achieve accurate classification
+and identify risk protein complexes. The PCLasso2 model has three inputs: a
+protein expression matrix, a vector of binary response variables, and a
+number of known protein complexes. It estimates the correlation between
+protein expression and response variable at the level of protein complexes.
+Similar to traditional Lasso-logistic model, PCLasso2 is based on the
+logistic regression model and estimates the logistic regression coefficients
+by maximizing likelihood function with regularization penalty. The
+difference is that PCLasso2 selects features at the level of protein
+complexes rather than individual proteins. Considering that proteins usually
+function by forming protein complexes, PCLasso2 regards proteins belonging
+to the same protein complex as a group and constructs a group Lasso penalty
+(l1/l2 penalty) based on the sum (i.e. l1 norm) of the l2 norms of the
 regression coefficients of the group members to perform the selection of
-features at the group level. With the group Lasso penalty, PCLasso2
-trains the logistic regression model and obtains a sparse solution at the
-protein complex level, that is, the proteins belonging to a protein complex
-are either wholly included or wholly excluded from the model. PCLasso2 outputs
-a prediction model and a small set of protein complexes included in the model,
+features at the group level. With the group Lasso penalty, PCLasso2 trains
+the logistic regression model and obtains a sparse solution at the protein
+complex level, that is, the proteins belonging to a protein complex are
+either wholly included or wholly excluded from the model. PCLasso2 outputs a
+prediction model and a small set of protein complexes included in the model,
 which are referred to as risk protein complexes. The PCSCAD and PCMCP are
-implemented by setting the penalty parameter \code{penalty} as "grSCAD" and
+performed by setting the penalty parameter \code{penalty} as "grSCAD" and
 "grMCP", respectively.
 }
 \examples{
