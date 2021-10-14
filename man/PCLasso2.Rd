@@ -87,11 +87,11 @@ family = "binomial")
 
 # fit PCSCAD model
 fit.PCSCAD <- PCLasso2(x, y, group = PC.Human, penalty = "grSCAD",
-family = "binomial")
+family = "binomial", gamma = 10)
 
 # fit PCMCP model
 fit.PCMCP <- PCLasso2(x, y, group = PC.Human, penalty = "grMCP",
-family = "binomial")
+family = "binomial", gamma = 9)
 }
 \references{
 PCLasso2: a protein complex-based, group Lasso-logistic model for risk
