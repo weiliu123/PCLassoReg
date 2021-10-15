@@ -24,7 +24,7 @@ Plot the cross-validation curve from a \code{cv.PCLasso2}
 object, along with standard error bars.
 }
 \details{
-Error bars representing approximate +/- 1 SE (68\\% confidence
+Error bars representing approximate +/- 1 SE (68\% confidence
 intervals) are plotted along with the estimates at value of lambda. See
 \code{plot.cv.grpreg} in the R package \code{grpreg} for details.
 }

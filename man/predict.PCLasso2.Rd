@@ -17,22 +17,23 @@
 \item{object}{Fitted \code{PCLasso2} model object.}
 
 \item{x}{Matrix of values at which predictions are to be made. The features
-(genes) contained in \code{x} should be consistent with those contained in
-\code{x} in the \code{PCLasso2} function.  Not used for type="coefficients"
-or for some of the type settings in \code{predict}.}
+(genes/proteins) contained in \code{x} should be consistent with those
+contained in \code{x} in the \code{PCLasso2} function.  Not used for
+type="coefficients" or for some of the type settings in \code{predict}.}
 
 \item{type}{Type of prediction: "link" returns the linear predictors;
 "response" gives the risk (i.e., exp(link)); "class" returns the binomial
 outcome with the highest probability; "vars" returns the indices for the
-nonzero coefficients; "vars.unique" returns unique features (genes)
-with nonzero coefficients (If a feature belongs to multiple groups and
-multiple groups are selected, the feature will be repeatedly selected.
-Compared with "var", "var.unique" will filter out repeated features.);
-"groups" returns the groups with at least one nonzero coefficient; "nvars"
-returns the number of nonzero coefficients; "nvars.unique" returns the
-number of unique features (genes) with nonzero coefficients; "ngroups"
-returns the number of groups with at least one nonzero coefficient; "norm"
-returns the L2 norm of the coefficients in each group.}
+nonzero coefficients; "vars.unique" returns unique features
+(genes/proteins) with nonzero coefficients (If a feature belongs to
+multiple groups and multiple groups are selected, the feature will be
+repeatedly selected. Compared with "var", "var.unique" will filter out
+repeated features.); "groups" returns the groups with at least one nonzero
+coefficient; "nvars" returns the number of nonzero coefficients;
+"nvars.unique" returns the number of unique features (genes/proteins) with
+nonzero coefficients; "ngroups" returns the number of groups with at least
+one nonzero coefficient; "norm" returns the L2 norm of the coefficients in
+each group.}
 
 \item{lambda}{Values of the regularization parameter \code{lambda} at which
 predictions are requested. For values of \code{lambda} not in the sequence

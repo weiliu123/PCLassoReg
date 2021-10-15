@@ -1,14 +1,16 @@
 #' Protein complex-based group Lasso-logistic model
 #'
-#' @param x A n x p matrix of protein expression measurements with n samples
-#' and p proteins.
+#' @param x A n x p matrix of gene/protein expression measurements with n samples
+#' and p genes/proteins.
 #' @param y The response vector.
-#' @param group A list of groups. The feature (protein) names in \code{group}
-#' should be consistent with the feature (protein) names in \code{x}.
+#' @param group A list of groups. The feature (gene/protein) names in \code{group}
+#' should be consistent with the feature (gene/protein) names in \code{x}.
 #' @param penalty The penalty to be applied to the model. For group selection,
 #' one of grLasso, grMCP, or grSCAD. See \code{grpreg} in the R package
 #' \code{grpreg} for details.
 #' @param family Either "binomial" or "gaussian", depending on the response.
+#' @param gamma Tuning parameter of the \code{grSCAD}/\code{grMCP} penalty.
+#' Default is 8.
 #' @param standardize Logical flag for \code{x} standardization, prior to
 #' fitting the model. Default is \code{TRUE}.
 #' @param ... Arguments to be passed to \code{grpreg} in the R package
@@ -35,11 +37,11 @@
 #'  either wholly included or wholly excluded from the model. PCLasso2 outputs a
 #'  prediction model and a small set of protein complexes included in the model,
 #'  which are referred to as risk protein complexes. The PCSCAD and PCMCP are
-#'  performed by setting the penalty parameter \code{penalty} as "grSCAD" and
-#'  "grMCP", respectively.
-#' @return An object with S3 class "PCLasso2" containing:
-#' \item{fit}{An object of class "grpreg"}
-#' \item{Complexes.dt}{Complexes with  features (proteins) not included
+#'  performed by setting the penalty parameter \code{penalty} as \code{grSCAD}
+#'  and \code{grMCP}, respectively.
+#' @return An object with S3 class \code{PCLasso2} containing:
+#' \item{fit}{An object of class \code{grpreg}}
+#' \item{Complexes.dt}{Complexes with  features (genes/proteins) not included
 #'     in \code{x} being filtered out. }
 #' @import grpreg
 #' @export
@@ -79,6 +81,7 @@
 PCLasso2 <- function(x, y, group,
                     penalty = c("grLasso", "grMCP", "grSCAD"),
                     family=c("binomial", "gaussian", "poisson"),
+                    gamma = 8,
                     standardize = TRUE,...){
 
     penalty = match.arg(penalty)
@@ -140,6 +143,7 @@ PCLasso2 <- function(x, y, group,
                    y=y,
                    group=groupOfFeats,
                    penalty = penalty,
+                   gamma = gamma,
                    family = family,...)
 
 

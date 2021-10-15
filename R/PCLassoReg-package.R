@@ -1,7 +1,7 @@
 #' @title \packageTitle{PCLassoReg}
 #' @description \packageDescription{PCLassoReg}
 #' @details
-#' \packageIndices{PCLasso} The PCLasso model accepts a protein expression
+#' The PCLasso model accepts a protein expression
 #' matrix, survival data, and protein complexes for training the prognostic
 #' model, and makes predictions for new samples and identifies risk protein
 #' complexes associated with survival.

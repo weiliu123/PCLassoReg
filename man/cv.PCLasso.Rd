@@ -15,17 +15,17 @@ cv.PCLasso(
 )
 }
 \arguments{
-\item{x}{A n x p design matrix of gene expression measurements with n samples
-and p genes, as in \code{PCLasso}.}
+\item{x}{A n x p design matrix of gene/protein expression measurements with n
+samples and p genes/proteins, as in \code{PCLasso}.}
 
 \item{y}{The time-to-event outcome, as a two-column matrix or \code{Surv}
 object, as in \code{PCLasso}. The first column should be time on study
 (follow up time); the second column should be a binary variable with 1
 indicating that the event has occurred and 0 indicating (right) censoring.}
 
-\item{group}{A list of groups as in \code{PCLasso}. The feature (gene) names
-in \code{group} should be consistent with the feature (gene) names in
-\code{x}.}
+\item{group}{A list of groups as in \code{PCLasso}. The feature
+(gene/protein) names in \code{group} should be consistent with the feature
+(gene/protein) names in \code{x}.}
 
 \item{penalty}{The penalty to be applied to the model. For group selection,
 one of grLasso, grMCP, or grSCAD. For bi-level selection, one of gel or
@@ -40,12 +40,9 @@ fitting the model. Default is \code{TRUE}.}
 \code{grpreg}.}
 }
 \value{
-An object with S3 class "cv.PCLasso" containing:
-\item{cv.fit}{
-An object of class "cv.grpsurv".}
-\item{complexes.dt}{
-Complexes with  features (proteins) not included in \code{x} being filtered
-out. }
+An object with S3 class "cv.PCLasso" containing: \item{cv.fit}{ An
+object of class "cv.grpsurv".} \item{complexes.dt}{ Complexes with
+features (genes/proteins) not included in \code{x} being filtered out. }
 }
 \description{
 Perform k-fold cross validations for the PCLasso model with grouped
@@ -53,11 +50,11 @@ covariates over a grid of values for the regularization parameter
 \code{lambda}.
 }
 \details{
-The function calls \code{PCLasso} \code{nfolds} times, each time leaving out
-1/\code{nfolds} of the data. The cross-validation error is based on the
-deviance. The numbers for censored samples are balanced across the folds.
-\code{cv.PCLasso} uses the approach of calculating the full Cox partial
-likelihood using the cross-validated set of linear predictors. See
+The function calls \code{PCLasso} \code{nfolds} times, each time
+leaving out 1/\code{nfolds} of the data. The cross-validation error is based
+on the deviance. The numbers for censored samples are balanced across the
+folds. \code{cv.PCLasso} uses the approach of calculating the full Cox
+partial likelihood using the cross-validated set of linear predictors. See
 \code{cv.grpsurv} in the R package \code{grpreg} for details.
 }
 \examples{

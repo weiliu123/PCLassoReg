@@ -46,7 +46,7 @@ function(x, norm = TRUE, ...){
 #' @param norm If TRUE, plot the norm of each group, rather than the individual
 #' coefficients.
 #' @param ... Other graphical parameters to \code{plot}
-#' @details Error bars representing approximate +/- 1 SE (68\% confidence
+#' @details Error bars representing approximate +/- 1 SE (68% confidence
 #' intervals) are plotted along with the estimates at value of lambda. See
 #' \code{plot.cv.grpreg} in the R package \code{grpreg} for details.
 #'
@@ -135,7 +135,7 @@ plot.PCLasso2 <-
 #' @param norm If TRUE, plot the norm of each group, rather than the individual
 #' coefficients.
 #' @param ... Other graphical parameters to \code{plot}
-#' @details Error bars representing approximate +/- 1 SE (68\% confidence
+#' @details Error bars representing approximate +/- 1 SE (68% confidence
 #' intervals) are plotted along with the estimates at value of lambda. See
 #' \code{plot.cv.grpreg} in the R package \code{grpreg} for details.
 #'

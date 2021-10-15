@@ -5,28 +5,29 @@
 #'
 #' @param object Fitted \code{PCLasso} model object.
 #' @param x Matrix of values at which predictions are to be made. The features
-#' (genes) contained in \code{x} should be consistent with those contained in
-#' \code{x} in the \code{PCLasso} function.  Not used for type="coefficients"
-#' or for some of the type settings in \code{predict}.
+#'   (genes/proteins) contained in \code{x} should be consistent with those
+#'   contained in \code{x} in the \code{PCLasso} function.  Not used for
+#'   type="coefficients" or for some of the type settings in \code{predict}.
 #' @param type Type of prediction: "link" returns the linear predictors;
 #'   "response" gives the risk (i.e., exp(link)); "vars" returns the indices for
 #'   the nonzero coefficients; "vars.unique" returns unique features
-#'   (genes) with nonzero coefficients (If a feature belongs to multiple groups
-#'   and multiple groups are selected, the feature will be repeatedly selected.
-#'   Compared with "var", "var.unique" will filter out repeated features.);
-#'   "groups" returns the groups with at least one nonzero coefficient; "nvars"
-#'   returns the number of nonzero coefficients; "nvars.unique" returns the
-#'   number of unique features (genes) with nonzero coefficients; "ngroups"
-#'   returns the number of groups with at least one nonzero coefficient; "norm"
-#'   returns the L2 norm of the coefficients in each group."survival" returns
-#'   the estimated survival function; "median" estimates median survival times.
+#'   (genes/proteins) with nonzero coefficients (If a feature belongs to
+#'   multiple groups and multiple groups are selected, the feature will be
+#'   repeatedly selected. Compared with "var", "var.unique" will filter out
+#'   repeated features.); "groups" returns the groups with at least one nonzero
+#'   coefficient; "nvars" returns the number of nonzero coefficients;
+#'   "nvars.unique" returns the number of unique features (genes/proteins) with
+#'   nonzero coefficients; "ngroups" returns the number of groups with at least
+#'   one nonzero coefficient; "norm" returns the L2 norm of the coefficients in
+#'   each group."survival" returns the estimated survival function; "median"
+#'   estimates median survival times.
 #' @param lambda Values of the regularization parameter \code{lambda} at which
 #'   predictions are requested. For values of \code{lambda} not in the sequence
 #'   of fitted models, linear interpolation is used.
 #' @param ... Arguments to be passed to \code{predict.grpsurv} in the R package
-#' \code{grpreg}.
-#' @details
-#' See \code{predict.grpsurv} in the R package \code{grpreg} for details.
+#'   \code{grpreg}.
+#' @details See \code{predict.grpsurv} in the R package \code{grpreg} for
+#' details.
 #' @return The object returned depends on \code{type}.
 #' @seealso \code{\link{PCLasso}}
 #' @importFrom stats predict
@@ -196,36 +197,33 @@ predict.PCLasso <-
 
 #' Make predictions from a cross-validated PCLasso model
 #'
-#' @description
-#' Similar to other predict methods, this function returns predictions from a
-#' fitted "cv.PCLasso" object, using the optimal value chosen for \code{lambda}.
+#' @description Similar to other predict methods, this function returns
+#'   predictions from a fitted \code{cv.PCLasso} object, using the optimal value
+#'   chosen for \code{lambda}.
 #'
 #' @param object Fitted \code{cv.PCLasso} model object.
-#' @param x
-#' Matrix of values at which predictions are to be made. The features (genes)
-#' contained in \code{x} should be consistent with those contained in \code{x}
-#' in the \code{cv.PCLasso} function.  Not used for type="coefficients" or for
-#' some of the type settings in \code{predict}.
-#' @param type
-#' Type of prediction: "link" returns the linear predictors; "response" gives
-#' the risk (i.e., exp(link)); "vars" returns the indices for the nonzero
-#' coefficients; "vars.unique" returns unique features (genes) with nonzero
-#' coefficients (If a feature belongs to multiple groups and multiple groups are
-#' selected, the feature will be repeatedly selected. Compared with "var",
-#' "var.unique" will filter out repeated features.); "groups" returns the groups
-#' with at least one nonzero coefficient; "nvars" returns the number of nonzero
-#' coefficients; "nvars.unique" returens the number of unique features (genes)
-#' with nonzero coefficients; "ngroups" returns the number of groups with at
-#' least one nonzero coefficient; "norm" returns the L2 norm of the coefficients
-#' in each group."survival" returns the estimated survival function; "median"
-#' estimates median survival times.
-#' @param lambda
-#' Values of the regularization parameter \code{lambda} at which predictions are
-#' requested. For values of  \code{lambda} not in the sequence of fitted models,
-#' linear interpolation is used.
-#' @param ...
-#' Arguments to be passed to \code{predict.cv.grpsurv} in the R package
-#' \code{grpreg}.
+#' @param x Matrix of values at which predictions are to be made. The features
+#'   (genes/proteins) contained in \code{x} should be consistent with those
+#'   contained in \code{x} in the \code{cv.PCLasso} function.  Not used for
+#'   type="coefficients" or for some of the type settings in \code{predict}.
+#' @param type Type of prediction: "link" returns the linear predictors;
+#'   "response" gives the risk (i.e., exp(link)); "vars" returns the indices for
+#'   the nonzero coefficients; "vars.unique" returns unique features
+#'   (genes/proteins) with nonzero coefficients (If a feature belongs to
+#'   multiple groups and multiple groups are selected, the feature will be
+#'   repeatedly selected. Compared with "var", "var.unique" will filter out
+#'   repeated features.); "groups" returns the groups with at least one nonzero
+#'   coefficient; "nvars" returns the number of nonzero coefficients;
+#'   "nvars.unique" returens the number of unique features (genes/proteins) with
+#'   nonzero coefficients; "ngroups" returns the number of groups with at least
+#'   one nonzero coefficient; "norm" returns the L2 norm of the coefficients in
+#'   each group."survival" returns the estimated survival function; "median"
+#'   estimates median survival times.
+#' @param lambda Values of the regularization parameter \code{lambda} at which
+#'   predictions are requested. For values of  \code{lambda} not in the sequence
+#'   of fitted models, linear interpolation is used.
+#' @param ... Arguments to be passed to \code{predict.cv.grpsurv} in the R
+#'   package \code{grpreg}.
 #'
 #' @return
 #' The object returned depends on \code{type}.
@@ -388,26 +386,27 @@ predict.cv.PCLasso <-
 #'
 #' @param object Fitted \code{PCLasso2} model object.
 #' @param x Matrix of values at which predictions are to be made. The features
-#' (genes) contained in \code{x} should be consistent with those contained in
-#' \code{x} in the \code{PCLasso2} function.  Not used for type="coefficients"
-#' or for some of the type settings in \code{predict}.
+#'   (genes/proteins) contained in \code{x} should be consistent with those
+#'   contained in \code{x} in the \code{PCLasso2} function.  Not used for
+#'   type="coefficients" or for some of the type settings in \code{predict}.
 #' @param type Type of prediction: "link" returns the linear predictors;
 #'   "response" gives the risk (i.e., exp(link)); "class" returns the binomial
 #'   outcome with the highest probability; "vars" returns the indices for the
-#'   nonzero coefficients; "vars.unique" returns unique features (genes)
-#'   with nonzero coefficients (If a feature belongs to multiple groups and
-#'   multiple groups are selected, the feature will be repeatedly selected.
-#'   Compared with "var", "var.unique" will filter out repeated features.);
-#'   "groups" returns the groups with at least one nonzero coefficient; "nvars"
-#'   returns the number of nonzero coefficients; "nvars.unique" returns the
-#'   number of unique features (genes) with nonzero coefficients; "ngroups"
-#'   returns the number of groups with at least one nonzero coefficient; "norm"
-#'   returns the L2 norm of the coefficients in each group.
+#'   nonzero coefficients; "vars.unique" returns unique features
+#'   (genes/proteins) with nonzero coefficients (If a feature belongs to
+#'   multiple groups and multiple groups are selected, the feature will be
+#'   repeatedly selected. Compared with "var", "var.unique" will filter out
+#'   repeated features.); "groups" returns the groups with at least one nonzero
+#'   coefficient; "nvars" returns the number of nonzero coefficients;
+#'   "nvars.unique" returns the number of unique features (genes/proteins) with
+#'   nonzero coefficients; "ngroups" returns the number of groups with at least
+#'   one nonzero coefficient; "norm" returns the L2 norm of the coefficients in
+#'   each group.
 #' @param lambda Values of the regularization parameter \code{lambda} at which
 #'   predictions are requested. For values of \code{lambda} not in the sequence
 #'   of fitted models, linear interpolation is used.
 #' @param ... Arguments to be passed to \code{predict.grpreg} in the R package
-#' \code{grpreg}.
+#'   \code{grpreg}.
 #' @details
 #' See \code{predict.grpreg} in the R package \code{grpreg} for details.
 #' @return The object returned depends on \code{type}.
@@ -580,36 +579,34 @@ predict.PCLasso2 <-
 #'
 #' @description
 #' Similar to other predict methods, this function returns predictions from a
-#' fitted "cv.PCLasso2" object, using the optimal value chosen for \code{lambda}.
+#' fitted \code{cv.PCLasso2} object, using the optimal value chosen for
+#' \code{lambda}.
 #'
 #' @param object Fitted \code{cv.PCLasso2} model object.
-#' @param x
-#' Matrix of values at which predictions are to be made. The features (genes)
-#' contained in \code{x} should be consistent with those contained in \code{x}
-#' in the \code{cv.PCLasso2} function.  Not used for type="coefficients" or for
-#' some of the type settings in \code{predict}.
+#' @param x Matrix of values at which predictions are to be made. The features
+#'   (genes/proteins) contained in \code{x} should be consistent with those
+#'   contained in \code{x} in the \code{cv.PCLasso2} function.  Not used for
+#'   type="coefficients" or for some of the type settings in \code{predict}.
 #' @param type Type of prediction: "link" returns the linear predictors;
 #'   "response" gives the risk (i.e., exp(link)); "class" returns the binomial
 #'   outcome with the highest probability; "vars" returns the indices for the
-#'   nonzero coefficients; "vars.unique" returns unique features (genes)
-#'   with nonzero coefficients (If a feature belongs to multiple groups and
-#'   multiple groups are selected, the feature will be repeatedly selected.
-#'   Compared with "var", "var.unique" will filter out repeated features.);
-#'   "groups" returns the groups with at least one nonzero coefficient; "nvars"
-#'   returns the number of nonzero coefficients; "nvars.unique" returns the
-#'   number of unique features (genes) with nonzero coefficients; "ngroups"
-#'   returns the number of groups with at least one nonzero coefficient; "norm"
-#'   returns the L2 norm of the coefficients in each group.
-#' @param lambda
-#' Values of the regularization parameter \code{lambda} at which predictions are
-#' requested. For values of  \code{lambda} not in the sequence of fitted models,
-#' linear interpolation is used.
-#' @param ...
-#' Arguments to be passed to \code{predict.cv.grpreg} in the R package
-#' \code{grpreg}.
+#'   nonzero coefficients; "vars.unique" returns unique features
+#'   (genes/proteins) with nonzero coefficients (If a feature belongs to
+#'   multiple groups and multiple groups are selected, the feature will be
+#'   repeatedly selected. Compared with "var", "var.unique" will filter out
+#'   repeated features.); "groups" returns the groups with at least one nonzero
+#'   coefficient; "nvars" returns the number of nonzero coefficients;
+#'   "nvars.unique" returns the number of unique features (genes/proteins) with
+#'   nonzero coefficients; "ngroups" returns the number of groups with at least
+#'   one nonzero coefficient; "norm" returns the L2 norm of the coefficients in
+#'   each group.
+#' @param lambda Values of the regularization parameter \code{lambda} at which
+#'   predictions are requested. For values of  \code{lambda} not in the sequence
+#'   of fitted models, linear interpolation is used.
+#' @param ... Arguments to be passed to \code{predict.cv.grpreg} in the R
+#'   package \code{grpreg}.
 #'
-#' @return
-#' The object returned depends on \code{type}.
+#' @return The object returned depends on \code{type}.
 #' @method predict cv.PCLasso2
 #' @importFrom stats predict
 #' @export

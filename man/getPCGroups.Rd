@@ -13,11 +13,11 @@ getPCGroups(
 \arguments{
 \item{Groups}{A data frame containing the protein complexes}
 
-\item{Organism}{Organism, one of \code{Human}, \code{Mouse}, \code{Rat},
-\code{Mammalia}, \code{Bovine}, \code{Dog},or \code{Rabbit}.}
+\item{Organism}{Organism. one of \code{Human}, \code{Mouse}, \code{Rat},
+\code{Mammalia}, \code{Bovine}, \code{Dog}, or \code{Rabbit}.}
 
 \item{Type}{The name type of the proteins in the protein complexes. One of
-\code{"GeneSymbol", "EntrezID", "UniprotID"}}
+\code{GeneSymbol}, \code{EntrezID}, \code{UniprotID}}
 }
 \value{
 A list of protein complexes
