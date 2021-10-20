@@ -74,11 +74,14 @@ Type = "GeneSymbol")
 
 # fit model
 cv.fit1 <- cv.PCLasso2(x, y, group = PC.Human, penalty = "grLasso",
-family = "binomial", nfolds = 10)
+family = "binomial", nfolds = 5)
+
+\dontrun{
 cv.fit1 <- cv.PCLasso2(x, y, group = PC.Human, penalty = "grSCAD",
 family = "binomial", nfolds = 5, gamma = 10)
 cv.fit1 <- cv.PCLasso2(x, y, group = PC.Human, penalty = "grMCP",
-family = "binomial", nfolds = 10, gamma = 15)
+family = "binomial", nfolds = 5, gamma = 15)}
+
 }
 \references{
 PCLasso2: a protein complex-based, group Lasso-logistic model for risk
