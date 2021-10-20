@@ -1,6 +1,6 @@
 Package: PCLassoReg
 Title: Protein complex-based regression models for risk protein complex identification
-Version: 0.0.0.9000
+Version: 1.0.0
 Authors@R: 
     person("Wei", "Liu", , "freelw@qq.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-5496-3641"))
@@ -16,3 +16,7 @@ Imports:
     grpreg
 URL: https://github.com/weiliu123/PCLassoReg
 BugReports: https://github.com/weiliu123/PCLassoReg/issues
+Suggests: 
+    rmarkdown,
+    knitr
+VignetteBuilder: knitr

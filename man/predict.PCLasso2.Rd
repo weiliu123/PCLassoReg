@@ -77,6 +77,7 @@ fit.PCLasso2 <- PCLasso2(x = x.train, y = y.train, group = PC.Human,
 s <- predict(object = fit.PCLasso2, x = x.test, type="link",
 lambda=fit.PCLasso2$fit$lambda)
 
+# predict classes of samples in x.test
 s <- predict(object = fit.PCLasso2, x = x.test, type="class",
 lambda=fit.PCLasso2$fit$lambda[10])
 

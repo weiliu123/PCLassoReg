@@ -439,6 +439,7 @@ predict.cv.PCLasso <-
 #' s <- predict(object = fit.PCLasso2, x = x.test, type="link",
 #' lambda=fit.PCLasso2$fit$lambda)
 #'
+#' # predict classes of samples in x.test
 #' s <- predict(object = fit.PCLasso2, x = x.test, type="class",
 #' lambda=fit.PCLasso2$fit$lambda[10])
 #'
@@ -636,6 +637,10 @@ predict.PCLasso2 <-
 #' penalty = "grLasso", family = "binomial", nfolds = 10)
 #'
 #' # predict risk scores of samples in x.test
+#' s <- predict(object = cv.fit1, x = x.test, type="link",
+#'              lambda=cv.fit1$cv.fit$lambda.min)
+#'
+#' # predict classes of samples in x.test
 #' s <- predict(object = cv.fit1, x = x.test, type="class",
 #'              lambda=cv.fit1$cv.fit$lambda.min)
 #'
