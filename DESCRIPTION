@@ -1,5 +1,5 @@
 Package: PCLassoReg
-Title: Protein complex-based regression models for risk protein complex identification
+Title: Protein Complex-Based Regression Models for Risk Protein Complex Identification
 Version: 1.0.0
 Authors@R: 
     person("Wei", "Liu", , "freelw@qq.com", role = c("aut", "cre"),
