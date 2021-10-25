@@ -19,6 +19,9 @@ coefficients.}
 
 \item{...}{Other graphical parameters to \code{plot}}
 }
+\value{
+No return value, called for plotting of \code{cv.PCLasso2} objects.
+}
 \description{
 Plot the cross-validation curve from a \code{cv.PCLasso2}
 object, along with standard error bars.

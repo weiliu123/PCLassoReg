@@ -14,6 +14,9 @@ coefficients.}
 
 \item{...}{Other graphical parameters to \code{plot}.}
 }
+\value{
+No return value, called for plotting of \code{PCLasso} objects.
+}
 \description{
 Produces a plot of the coefficient paths for a fitted
 \code{PCLasso} object.

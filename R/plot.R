@@ -7,6 +7,7 @@
 #' coefficients.
 #' @param ... Other graphical parameters to \code{plot}.
 #'
+#' @returns No return value, called for plotting of \code{PCLasso} objects.
 #' @seealso \code{\link{PCLasso}}
 #' @export
 #'
@@ -50,6 +51,7 @@ function(x, norm = TRUE, ...){
 #' intervals) are plotted along with the estimates at value of lambda. See
 #' \code{plot.cv.grpreg} in the R package \code{grpreg} for details.
 #'
+#' @returns No return value, called for plotting of \code{cv.PCLasso} objects.
 #' @export
 #' @seealso \code{\link{cv.PCLasso}}
 #' @examples
@@ -96,6 +98,7 @@ plot.cv.PCLasso <-
 #' coefficients.
 #' @param ... Other graphical parameters to \code{plot}.
 #'
+#' @returns No return value, called for plotting of \code{PCLasso2} objects.
 #' @seealso \code{\link{PCLasso2}}
 #' @export
 #'
@@ -139,6 +142,7 @@ plot.PCLasso2 <-
 #' intervals) are plotted along with the estimates at value of lambda. See
 #' \code{plot.cv.grpreg} in the R package \code{grpreg} for details.
 #'
+#' @returns No return value, called for plotting of \code{cv.PCLasso2} objects.
 #' @export
 #' @seealso \code{\link{cv.PCLasso2}}
 #' @examples

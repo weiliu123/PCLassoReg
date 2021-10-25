@@ -50,7 +50,7 @@
 #' cv.fit1 <- cv.PCLasso2(x, y, group = PC.Human, penalty = "grLasso",
 #' family = "binomial", nfolds = 5)
 #'
-#' \dontrun{
+#' \donttest{
 #' cv.fit1 <- cv.PCLasso2(x, y, group = PC.Human, penalty = "grSCAD",
 #' family = "binomial", nfolds = 5, gamma = 10)
 #' cv.fit1 <- cv.PCLasso2(x, y, group = PC.Human, penalty = "grMCP",
